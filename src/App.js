@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from './components/Login/Login';
+import Login from './components/Login/LoginPage';
 import Todo from './components/ToDo/Todo';
-import Register from './components/Login/Register';
+import Register from './components/Login/RegisterPage';
 import Aux from './hoc/Aux';
 import NavbarComp from './components/NavbarComp';
 
