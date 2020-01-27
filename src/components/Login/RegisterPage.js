@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import Aux from '../../hoc/Aux';
 import { Link } from 'react-router-dom';
+import { userActions } from '../../actions/users_action';
+import { connect } from 'react-redux';
+import {registration_reducer} from '../../_reducers/registration_reducer';
 
-export default class Register extends Component {
+class Register extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             user: {
                 firstName: '',
@@ -30,8 +33,6 @@ export default class Register extends Component {
                 [name]:value
             }
         });
-
-
     }
 
     handleSubmit(event) {
@@ -47,6 +48,8 @@ export default class Register extends Component {
     }
 
     render() {
+        const {registering} = this.props;
+        const {user, isSubmitted} = this.state;
         return (
             <Aux>
                 <div className="col-md-6 mx-auto m-3 p-3 card card-body my-3">
@@ -86,8 +89,14 @@ export default class Register extends Component {
 }
 
 function mapStateToProps(state){
-    const { registering } = state.registration;
+    const { registering } = state.registration_reducer;
     return { registering};
-
 }
+
+const actionCreaters = {
+    register: userActions.register
+}
+
+const connectedRegPage = connect(mapStateToProps, actionCreaters)(Register);
+export { connectedRegPage as Register}
 
