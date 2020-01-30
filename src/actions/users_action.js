@@ -1,5 +1,6 @@
 import { alertActions } from "./alert_action";
 import { history } from '../_helpers/history';
+import {userService} from '../services/UserServices';
 
 export const userActions = {
     register
@@ -9,7 +10,7 @@ function register(user) {
     return dispatch => {
         dispatch(request(user));
 
-        register(user)
+        userService.register(user)
             .then(
                 user => {
                     dispatch(success());

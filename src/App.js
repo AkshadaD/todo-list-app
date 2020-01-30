@@ -35,7 +35,9 @@ class App extends Component {
           </div>
             
           <div>
-            {alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>}
+          {/* {alert.message &&
+                            <div className={`alert ${alert.type}`}>{alert.message}</div>
+          } */}
             <Switch>
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
