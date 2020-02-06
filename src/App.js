@@ -6,7 +6,7 @@ import Aux from './hoc/Aux';
 import NavbarComp from './components/NavbarComp';
 import {history} from './_helpers/history';
 import {alertActions} from './actions/alert_action';
-import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import {Router, Switch, Route, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 

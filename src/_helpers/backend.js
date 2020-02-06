@@ -1,6 +1,6 @@
 
 //array in local storage for registered users
-let users = JSON.parse(localStorage.getItem('users'));
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
 //backend
 export function configureBackend(){
@@ -21,7 +21,7 @@ export function configureBackend(){
                 }
 
                 //save new user
-                newUser.id = user.length ? Math.max(...users.map(user => user.id)) +1 : 1;
+                newUser.id = users.length ? Math.max(...users.map(user => user.id)) +1 : 1;
                 users.push(newUser);
                 localStorage.setItem('users', JSON.stringify(users));
 

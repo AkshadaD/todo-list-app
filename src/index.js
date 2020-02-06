@@ -7,6 +7,9 @@ import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux';
 import store from './_helpers/store';
+import {configureBackend} from './_helpers/backend';
+configureBackend();
+
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
